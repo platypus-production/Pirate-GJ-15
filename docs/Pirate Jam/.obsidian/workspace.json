@@ -1,159 +1,156 @@
 {
-  "main": {
-    "id": "6a6ada0b51912c95",
-    "type": "split",
-    "children": [
-      {
-        "id": "4216440ab7439127",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "a14d1d86d24dc610",
-            "type": "leaf",
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "My Brain.canvas",
-                "viewState": {
-                  "x": 70.65441371171386,
-                  "y": -225.4027016024509,
-                  "zoom": -0.7743265787760416
-                }
-              }
-            }
-          }
-        ]
-      }
-    ],
-    "direction": "vertical"
-  },
-  "left": {
-    "id": "c6ce071760ce64c1",
-    "type": "split",
-    "children": [
-      {
-        "id": "c8973758696af451",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "690b4402aaeec396",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              }
-            }
-          },
-          {
-            "id": "d30cae2f04ac9f0c",
-            "type": "leaf",
-            "state": {
-              "type": "search",
-              "state": {
-                "query": "",
-                "matchingCase": false,
-                "explainSearch": false,
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical"
-              }
-            }
-          },
-          {
-            "id": "959a2d659c673763",
-            "type": "leaf",
-            "state": {
-              "type": "bookmarks",
-              "state": {}
-            }
-          }
-        ]
-      }
-    ],
-    "direction": "horizontal",
-    "width": 300
-  },
-  "right": {
-    "id": "32231d2c96e6af35",
-    "type": "split",
-    "children": [
-      {
-        "id": "f7d4d73b2f00d262",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "97ea53816a7e70f7",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "My Brain.canvas",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
-            "id": "e6ca8e7621cd6d1c",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "My Brain.canvas",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
-            "id": "46903e0155e73c7b",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              }
-            }
-          },
-          {
-            "id": "55ac34577a13de4e",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "My Brain.canvas"
-              }
-            }
-          }
-        ]
-      }
-    ],
-    "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
-  },
-  "left-ribbon": {
-    "hiddenItems": {
-      "switcher:Ouvrir le sélecteur rapide": false,
-      "graph:Ouvrir la vue graphique": false,
-      "canvas:Créer une nouvelle toile": false,
-      "daily-notes:Ouvrir la note quotidienne": false,
-      "templates:Insérer le modèle": false,
-      "command-palette:Ouvrir la palette de commandes": false
-    }
-  },
-  "active": "a14d1d86d24dc610",
-  "lastOpenFiles": [
-    "My Brain.canvas",
-    "Game Design Document.md",
-    "Sans titre.md",
-    "Bienvenue.md"
-  ]
+	"main": {
+		"id": "6a6ada0b51912c95",
+		"type": "split",
+		"children": [
+			{
+				"id": "f8d49d064a2c0085",
+				"type": "tabs",
+				"children": [
+					{
+						"id": "ce88aaffd138e45c",
+						"type": "leaf",
+						"state": {
+							"type": "markdown",
+							"state": {
+								"file": "Game Design Document.md",
+								"mode": "source",
+								"source": false
+							}
+						}
+					}
+				]
+			}
+		],
+		"direction": "vertical"
+	},
+	"left": {
+		"id": "c6ce071760ce64c1",
+		"type": "split",
+		"children": [
+			{
+				"id": "c8973758696af451",
+				"type": "tabs",
+				"children": [
+					{
+						"id": "690b4402aaeec396",
+						"type": "leaf",
+						"state": {
+							"type": "file-explorer",
+							"state": {
+								"sortOrder": "alphabetical"
+							}
+						}
+					},
+					{
+						"id": "d30cae2f04ac9f0c",
+						"type": "leaf",
+						"state": {
+							"type": "search",
+							"state": {
+								"query": "",
+								"matchingCase": false,
+								"explainSearch": false,
+								"collapseAll": false,
+								"extraContext": false,
+								"sortOrder": "alphabetical"
+							}
+						}
+					},
+					{
+						"id": "959a2d659c673763",
+						"type": "leaf",
+						"state": {
+							"type": "bookmarks",
+							"state": {}
+						}
+					}
+				]
+			}
+		],
+		"direction": "horizontal",
+		"width": 300
+	},
+	"right": {
+		"id": "32231d2c96e6af35",
+		"type": "split",
+		"children": [
+			{
+				"id": "f7d4d73b2f00d262",
+				"type": "tabs",
+				"children": [
+					{
+						"id": "97ea53816a7e70f7",
+						"type": "leaf",
+						"state": {
+							"type": "backlink",
+							"state": {
+								"file": "Game Design Document.md",
+								"collapseAll": false,
+								"extraContext": false,
+								"sortOrder": "alphabetical",
+								"showSearch": false,
+								"searchQuery": "",
+								"backlinkCollapsed": false,
+								"unlinkedCollapsed": true
+							}
+						}
+					},
+					{
+						"id": "e6ca8e7621cd6d1c",
+						"type": "leaf",
+						"state": {
+							"type": "outgoing-link",
+							"state": {
+								"file": "Game Design Document.md",
+								"linksCollapsed": false,
+								"unlinkedCollapsed": true
+							}
+						}
+					},
+					{
+						"id": "46903e0155e73c7b",
+						"type": "leaf",
+						"state": {
+							"type": "tag",
+							"state": {
+								"sortOrder": "frequency",
+								"useHierarchy": true
+							}
+						}
+					},
+					{
+						"id": "55ac34577a13de4e",
+						"type": "leaf",
+						"state": {
+							"type": "outline",
+							"state": {
+								"file": "Game Design Document.md"
+							}
+						}
+					}
+				]
+			}
+		],
+		"direction": "horizontal",
+		"width": 300,
+		"collapsed": true
+	},
+	"left-ribbon": {
+		"hiddenItems": {
+			"switcher:Ouvrir le sélecteur rapide": false,
+			"graph:Ouvrir la vue graphique": false,
+			"canvas:Créer une nouvelle toile": false,
+			"daily-notes:Ouvrir la note quotidienne": false,
+			"templates:Insérer le modèle": false,
+			"command-palette:Ouvrir la palette de commandes": false
+		}
+	},
+	"active": "ce88aaffd138e45c",
+	"lastOpenFiles": [
+		"Game Design Document.md",
+		"My Brain.canvas",
+		"Sans titre.md",
+		"Bienvenue.md"
+	]
 }
