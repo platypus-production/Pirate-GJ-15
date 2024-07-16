@@ -1,0 +1,17 @@
+{
+	"nodes":[
+		{"id":"d2cb019113b40a4e","x":-2280,"y":-1560,"width":1223,"height":795,"type":"link","url":"https://docs.google.com/document/d/1Vl7BMvzUOhbunJrI_X1gUc6x-LAp3aaBiPwHUf27B70/edit#heading=h.lr899156xjnx"},
+		{"id":"4997f1fde9afb078","x":-894,"y":-293,"width":250,"height":59,"type":"text","text":"Game Design Documents"},
+		{"id":"ec3c9b5bdf196c54","x":-1793,"y":-640,"width":250,"height":60,"type":"text","text":"GDD SAMPLE"},
+		{"id":"d5d079772d3b66e3","x":-1793,"y":-234,"width":400,"height":400,"type":"file","file":"Game Design Document.md"},
+		{"id":"7e3558d73d5476bd","x":40,"y":-293,"width":250,"height":60,"type":"text","text":"Pirate Jam"},
+		{"id":"c2532e182711bfc8","x":40,"y":-519,"width":250,"height":60,"type":"text","text":"Theme ?"}
+	],
+	"edges":[
+		{"id":"d95d7bbdb1d66a2f","fromNode":"7e3558d73d5476bd","fromSide":"top","toNode":"c2532e182711bfc8","toSide":"bottom"},
+		{"id":"55d60577c8e12a42","fromNode":"7e3558d73d5476bd","fromSide":"left","toNode":"4997f1fde9afb078","toSide":"right"},
+		{"id":"840a0c7cff88d34d","fromNode":"4997f1fde9afb078","fromSide":"left","toNode":"d5d079772d3b66e3","toSide":"right"},
+		{"id":"6f074db99b905ef5","fromNode":"4997f1fde9afb078","fromSide":"top","toNode":"ec3c9b5bdf196c54","toSide":"bottom"},
+		{"id":"b3cdb96709e74a1b","fromNode":"ec3c9b5bdf196c54","fromSide":"top","toNode":"d2cb019113b40a4e","toSide":"bottom"}
+	]
+}

@@ -6,10 +6,12 @@ export class Main extends Phaser.Scene {
 	}
 
 	create() {
-		this.add.text(DEFAULT_WIDTH / 2, DEFAULT_HEIGHT / 2, "THIS IS A GAME!", {
-			color: "white",
-			align: "center",
-		});
+		this.add
+			.text(DEFAULT_WIDTH / 2, DEFAULT_HEIGHT / 2, "THIS IS A GAME!", {
+				color: "white",
+				align: "center",
+			})
+			.setOrigin(0.5);
 	}
 }
 

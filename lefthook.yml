@@ -1,4 +1,4 @@
-exclude: '(^|/)(.vscode|dist)'
+exclude: '(^|/)(.vscode|dist|docs)'
 
 pre-commit:
   commands:
