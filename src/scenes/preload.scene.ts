@@ -40,9 +40,6 @@ export class Preload extends Phaser.Scene {
 			)
 			.setOrigin(0.5, 0.5);
 
-		this.load.tilemapTiledJSON("dummy-map", "assets/dummy_map.json");
-		this.load.image("tiles", "assets/tilemap.png");
-
 		this.load.on("progress", (value: number) => {
 			percentage.setText(`${value * 100}%`);
 			progress_bar.clear();
