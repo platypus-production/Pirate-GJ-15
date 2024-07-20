@@ -1,13 +1,13 @@
-exclude: '(^|/)(.vscode|dist|docs)'
-
 pre-commit:
   commands:
     lint:
+      root: src/
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
       run: "pnpx @biomejs/biome check --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}"
 
 pre-push:
     commands:
       check:
+        root: src/
         glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
         run: pnpx @biomejs/biome check --no-errors-on-unmatched --files-ignore-unknown=true {push_files}
