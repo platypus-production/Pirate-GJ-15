@@ -148,12 +148,12 @@ section GDD
 Brainstorm and find Type of game :done GDD0, 2024-07-17, 2d 
 Defining the gameplay :done after GDD1 GDD2, 2024-07-18, 2d
 SPEC Player and ennemy basic :after GDD3, 2024-07-19, 1d
-SPEC Raycasting :GDD4, 2024-07-19, 1d
-SPEC Crafting system :GDD5, 2024-07-20, 12h
-SPEC Weapon Sytem :GDD6, 2024-07-20, 12h
-SPEC Inventory system :GDD7, 2024-07-20, 12h
-SPEC Loot system :GDD8, 2024-07-20, 12h
-Definition of all necessary tools and technologies :crit, after GDD1, 2024-07-20, 1d
+SPEC Raycasting :GDD4, 2024-07-21, 8h
+SPEC Crafting system :GDD5, 2024-07-21, 8h
+SPEC Weapon Sytem :GDD6, 2024-07-21, 8h
+SPEC Inventory system :GDD7, 2024-07-21, 8h
+SPEC Loot system :GDD8, 2024-07-21, 8h
+Add Internationalization with i18next :crit, after GDD1, 2024-07-20, 8h
 
 section Dev
 Installation & configurations des plugins et libs :crit, DEV0 after GDD1, 2024-07-21, 12h
