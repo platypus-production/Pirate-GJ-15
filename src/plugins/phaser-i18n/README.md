@@ -7,7 +7,6 @@ It implements the [`i18next`](https://www.i18next.com/) library in a global plug
 
 but also a `GameObject` that automatically translates text, accessible via `this.add.i18Text` in a `Phaser.Scene`.
 
-
 # Installation
 
 ```js
@@ -19,7 +18,6 @@ but also a `GameObject` that automatically translates text, accessible via `this
     plugin: {
       global: [
         {
-          // add the classic i18n options
           // [i18next#Configuration-Option]('https://www.i18next.com/overview/configuration-options')
           phaserI18n(options)
         }
