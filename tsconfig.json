@@ -31,9 +31,10 @@
 			"@scenes": ["src/scenes/index.ts"],
 			"@objects": ["src/objects/index.ts"],
 			"@utils": ["src/utils/index.ts"],
+			"@plugins": ["src/plugins/index.ts"],
 			"@types": ["src/types.ts"]
 		}
 	},
-	"include": ["src"],
+	"include": ["src", "src/**/*.d.ts"],
 	"exclude": ["node_modules"]
 }

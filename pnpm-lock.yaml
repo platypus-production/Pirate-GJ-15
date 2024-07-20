@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      i18next:
+        specifier: ^23.12.2
+        version: 23.12.2
+      i18next-browser-languagedetector:
+        specifier: ^8.0.0
+        version: 8.0.0
       phaser:
         specifier: ^3.80.1
         version: 3.80.1
@@ -32,6 +38,10 @@ importers:
         version: 4.3.2(typescript@5.5.3)(vite@5.3.3(@types/node@20.14.10))
 
 packages:
+
+  '@babel/runtime@7.24.8':
+    resolution: {integrity: sha512-5F7SDGs1T72ZczbRwbGO9lQi0NLjQxzl6i4lJxLxfW9U5UluCSyEJeniWvnhl3/euNiqQVbo8zruhsDfid0esA==}
+    engines: {node: '>=6.9.0'}
 
   '@biomejs/biome@1.8.3':
     resolution: {integrity: sha512-/uUV3MV+vyAczO+vKrPdOW0Iaet7UnJMU4bNMinggGJTAnBPjCoLEYcyYtYHNnUNYlv4xZMH6hVIQCAozq8d5w==}
@@ -335,6 +345,12 @@ packages:
   globrex@0.1.2:
     resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
 
+  i18next-browser-languagedetector@8.0.0:
+    resolution: {integrity: sha512-zhXdJXTTCoG39QsrOCiOabnWj2jecouOqbchu3EfhtSHxIB5Uugnm9JaizenOy39h7ne3+fLikIjeW88+rgszw==}
+
+  i18next@23.12.2:
+    resolution: {integrity: sha512-XIeh5V+bi8SJSWGL3jqbTEBW5oD6rbP5L+E7dVQh1MNTxxYef0x15rhJVcRb7oiuq4jLtgy2SD8eFlf6P2cmqg==}
+
   lefthook-darwin-arm64@1.7.2:
     resolution: {integrity: sha512-E3Ouk04/yeD8IBLGJkyzL0NMYIrjADQvaDbf4yNSq6HWGnUC0R2KpYxrZno2yahZnvQ0vYTDta7Egw6cqcYGlQ==}
     cpu: [arm64]
@@ -405,6 +421,9 @@ packages:
     resolution: {integrity: sha512-0vzE+lAiG7hZl1/9I8yzKLx3aR9Xbof3fBHKunvMfOCYAtMhrsnccJY2iTURb9EZd5+pLuiNV9/c/GZJOHsgIw==}
     engines: {node: ^10 || ^12 || >=14}
 
+  regenerator-runtime@0.14.1:
+    resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}
+
   rollup@4.18.1:
     resolution: {integrity: sha512-Elx2UT8lzxxOXMpy5HWQGZqkrQOtrVDDa/bm9l10+U4rQnVzbL/LgZ4NOM1MPIDyHk69W4InuYDF5dzRh4Kw1A==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
@@ -469,6 +488,10 @@ packages:
         optional: true
 
 snapshots:
+
+  '@babel/runtime@7.24.8':
+    dependencies:
+      regenerator-runtime: 0.14.1
 
   '@biomejs/biome@1.8.3':
     optionalDependencies:
@@ -665,6 +688,14 @@ snapshots:
 
   globrex@0.1.2: {}
 
+  i18next-browser-languagedetector@8.0.0:
+    dependencies:
+      '@babel/runtime': 7.24.8
+
+  i18next@23.12.2:
+    dependencies:
+      '@babel/runtime': 7.24.8
+
   lefthook-darwin-arm64@1.7.2:
     optional: true
 
@@ -715,6 +746,8 @@ snapshots:
       nanoid: 3.3.7
       picocolors: 1.0.1
       source-map-js: 1.2.0
+
+  regenerator-runtime@0.14.1: {}
 
   rollup@4.18.1:
     dependencies:
