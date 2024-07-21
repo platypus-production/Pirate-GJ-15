@@ -134,13 +134,14 @@ ___
 | C           | RT                             | Item 4       |
 | Escape      | Start                          | Pause        |
 | Tab \| I    | Select                         | Inventory    |
+|             |                                |              |
 
 ___
 ## Development Timeline
 ```mermaid
 gantt
 title Pirate Jam - Development timeline
-dateFormat YYYY-MM-DD
+dateFormat YYYY-MM-DD-HH
 axisFormat %m-%d
 GameJam :active, 2024-07-17, 14d
 
@@ -153,16 +154,16 @@ SPEC Crafting system :GDD5, 2024-07-21, 8h
 SPEC Weapon Sytem :GDD6, 2024-07-21, 8h
 SPEC Inventory system :GDD7, 2024-07-21, 8h
 SPEC Loot system :GDD8, 2024-07-21, 8h
-Add Internationalization with i18next :crit, after GDD1, 2024-07-20, 8h
 
 section Dev
-Installation & configurations des plugins et libs :crit, DEV0 after GDD1, 2024-07-21, 12h
-Création du système gestion inputs :after DEV0 DEV1, 2024-07-21, 36h
+Add Internationalization with i18next :crit DEV0, 2024-07-20-12, 8h
+Creating the input management system :after DEV0 DEV1, 2024-07-21, 8h
 
 section Level Design
-Créer level de playground :, 2024-07-21, 4h
+Create a playground level :, 2024-07-21, 4h
 
 section Arts & Design
+Create wireframe of tilemaps :, 2024-07-21, 4h
 
 section UX/UI
 
