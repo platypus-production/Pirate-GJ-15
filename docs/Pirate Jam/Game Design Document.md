@@ -120,21 +120,20 @@ ___
 ## Control
 | Keyboard    | Gamepad                        | Action       |
 | ----------- | ------------------------------ | ------------ |
-| Z \| W      | D-Pad Up \| Axis X Up          | Move Up      |
-| S           | D-Pad Down \| Axis X Down      | Move Down    |
-| Q \| A      | D-Pad Left \| Axis X Left      | Move Left    |
-| D           | D-Pad Right \| \| Axis X Right | Move Right   |
-| Arrow Up    | Y                              | Attack Up    |
-| Arrow Down  | B                              | Attack Down  |
-| Arrow Left  | A                              | Attack Left  |
-| Arrow Right | X                              | Attack Right |
+| Arrow Up    | D-Pad Up \| Axis X Up          | Move Up      |
+| Arrow Down  | D-Pad Down \| Axis X Down      | Move Down    |
+| Arrow Left  | D-Pad Left \| Axis X Left      | Move Left    |
+| Arrow Right | D-Pad Right \| \| Axis X Right | Move Right   |
+| Z \| W      | Y                              | Attack Up    |
+| S           | B                              | Attack Down  |
+| Q \| A      | A                              | Attack Left  |
+| D           | X                              | Attack Right |
 | A \| Q      | LB                             | Item 1       |
 | E           | RB                             | Item 2       |
 | X           | LT                             | Item 3       |
 | C           | RT                             | Item 4       |
 | Escape      | Start                          | Pause        |
 | Tab \| I    | Select                         | Inventory    |
-|             |                                |              |
 
 ___
 ## Development Timeline
