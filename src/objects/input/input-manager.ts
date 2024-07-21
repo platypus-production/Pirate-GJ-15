@@ -33,7 +33,7 @@ const DEFAULT_KEYS_MAPPING: KeysMappingProps<number> = {
 	itemLocationD: Phaser.Input.Keyboard.KeyCodes.F,
 	pause: Phaser.Input.Keyboard.KeyCodes.ESC,
 };
-
+// @SPEC: Think about converting this class into a Singleton. We'll only need one class input for the whole game.
 export class InputManager {
 	private keys: KeysMappingProps<Phaser.Input.Keyboard.Key>;
 	private keyboard: Phaser.Input.Keyboard.KeyboardPlugin;
