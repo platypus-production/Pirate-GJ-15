@@ -12,8 +12,10 @@ const PhaserI18nEventEmitter = new Phaser.Events.EventEmitter();
 
 export class Phaseri18n extends Phaser.Plugins.BasePlugin {
 	private i18n: i18n;
-	public t: TFunction;
+
+	public lang: string;
 	public supportedLngs: string | string[];
+	public t: TFunction;
 
 	constructor(pluginManager: Phaser.Plugins.PluginManager) {
 		super(pluginManager);
@@ -51,6 +53,7 @@ export class Phaseri18n extends Phaser.Plugins.BasePlugin {
 
 		this.t = instance;
 		this.supportedLngs = Object.keys(data?.resources || {});
+		this.lang = this.i18n.language;
 	}
 
 	changeLanguage(lang: string) {
