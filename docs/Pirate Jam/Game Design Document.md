@@ -149,21 +149,25 @@ Brainstorm and find Type of game :done GDD0, 2024-07-17, 2d
 Defining the gameplay :done after GDD1 GDD2, 2024-07-18, 2d
 SPEC Player and ennemy basic :done GDD3, 2024-07-19, 1d
 SPEC Crafting system :crit GDD5, 2024-07-22, 8h
-SPEC Raycasting shadow and light :GDD4, 2024-07-22, 8h
-SPEC Weapon Sytem :GDD6, 2024-07-22, 8h
-SPEC Inventory system :GDD7, 2024-07-22, 8h
-SPEC Loot system :GDD8, 2024-07-22, 8h
+SPEC Raycasting shadow and light :done GDD4, 2024-07-22, 8h
+SPEC Weapon Sytem :done GDD6, 2024-07-22, 8h
+SPEC Inventory system :done GDD7, 2024-07-22, 8h
+SPEC Loot system :done GDD8, 2024-07-22, 8h
 
 section Dev
-Add Internationalization with i18next :crit DEV0, 2024-07-20-12, 8h
-Creating the input management system :after DEV0 DEV1, 2024-07-21, 8h
-Creating class for entity & player :active, 2024-07-21-17, 8h 
+Add Internationalization with i18next :done DEV0, 2024-07-20-12, 8h
+Create the input management system :done after DEV0 DEV1, 2024-07-21, 8h
+Create class for entity & player :done, 2024-07-21-17, 8h 
+Create class for ennemy :,2024-07-22-17, 4h
+Create Weapon :, 2024-07-22-17, 4h
+Create inventory management :, 2024-07-23-17, 4h
+Create Basic crafting system :, 2024-07-23-17, 4h
 
 section Level Design
-Create a playground level :, 2024-07-21, 4h
+Create a playground level :, 2024-07-25, 4h
 
 section Arts & Design
-Create wireframe of tilemaps :, 2024-07-21, 4h
+Create wireframe of tilemaps :, 2024-07-25, 4h
 
 section UX/UI
 
@@ -173,7 +177,7 @@ section Music & Sound
 ## Specification
 ```mermaid
 ---
-title: Entity, player, enemy
+title: Just Fucking Diagram
 ---
 classDiagram
 
@@ -181,11 +185,12 @@ Entity <|-- Player
 
 Entity <|-- Enemy
 
-  
+Weapon "1" -- "1" Entity
 
 class Entity {
 
-+number life
++Weapon weapon
+-List~Item~ inventory
 
 +onMove(number x, number y) void
 
@@ -196,10 +201,6 @@ class Entity {
   
 
 class Player {
-
-+Inventory inventory
-
-+Weapon weapon
 
 +InputManager inputManager
 
@@ -213,12 +214,32 @@ class Player {
   
 
 class Enemy {
-
-+List<Item> loots
-+Weapon weapon
++number life
 
 +onDropLoop() void
 +onTarget() void
 +onAttack() void
+}
+
+class Weapon {
++uuid id
++string name
++string description 
+}
+```
+```mermaid
+classDiagram
+
+class Item {
++uuid id
++string name
++string description
++List~string~ chemical-composition
+}
+
+class Recipe {
++uuid id
++string name
++List~string~ pattern
 }
 ```
