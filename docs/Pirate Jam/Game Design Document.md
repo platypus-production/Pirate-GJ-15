@@ -147,16 +147,17 @@ GameJam :active, 2024-07-17, 14d
 section GDD
 Brainstorm and find Type of game :done GDD0, 2024-07-17, 2d 
 Defining the gameplay :done after GDD1 GDD2, 2024-07-18, 2d
-SPEC Player and ennemy basic :after GDD3, 2024-07-19, 1d
-SPEC Raycasting :GDD4, 2024-07-21, 8h
-SPEC Crafting system :GDD5, 2024-07-21, 8h
-SPEC Weapon Sytem :GDD6, 2024-07-21, 8h
-SPEC Inventory system :GDD7, 2024-07-21, 8h
-SPEC Loot system :GDD8, 2024-07-21, 8h
+SPEC Player and ennemy basic :done GDD3, 2024-07-19, 1d
+SPEC Crafting system :crit GDD5, 2024-07-22, 8h
+SPEC Raycasting shadow and light :GDD4, 2024-07-22, 8h
+SPEC Weapon Sytem :GDD6, 2024-07-22, 8h
+SPEC Inventory system :GDD7, 2024-07-22, 8h
+SPEC Loot system :GDD8, 2024-07-22, 8h
 
 section Dev
 Add Internationalization with i18next :crit DEV0, 2024-07-20-12, 8h
 Creating the input management system :after DEV0 DEV1, 2024-07-21, 8h
+Creating class for entity & player :active, 2024-07-21-17, 8h 
 
 section Level Design
 Create a playground level :, 2024-07-21, 4h
@@ -188,10 +189,6 @@ class Entity {
 
 +onMove(number x, number y) void
 
-+onDamage(number cost) void
-
-+onHeal(number cost) void
-
 +onDeath() void
 
 }
@@ -204,14 +201,11 @@ class Player {
 
 +Weapon weapon
 
-+Control control
-
-+move(): void
++InputManager inputManager
 
 +throwItem(Item item) void
 +useItem(Item item) void
 +onAttack() void
-
 +onAddItemToInventory(Item item) void
 
 }
