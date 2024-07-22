@@ -1,3 +1,5 @@
+import type { FunctionWithUnknowArgs } from "@types";
+
 export type InputManagerEventName =
 	| "UPDATE_KEYS_MAPPING"
 	| "RESET_KEYS_MAPPING";
@@ -66,8 +68,12 @@ export class InputManager {
 		return this.events.emit(eventName, data);
 	}
 
-	on<T, K>(eventName: InputManagerEventName, callback: T, context?: K) {
-		return this.events.emit(eventName, callback, context);
+	on<T extends FunctionWithUnknowArgs, K>(
+		eventName: InputManagerEventName,
+		callback: T,
+		context?: K,
+	) {
+		return this.events.on(eventName, callback, context);
 	}
 
 	justDown(key: Phaser.Input.Keyboard.Key): boolean {
@@ -102,7 +108,7 @@ export class InputManager {
 	}
 
 	get axe_y(): 1 | 0 | -1 {
-		return this.keys.up.isDown ? 1 : this.keys.down.isDown ? -1 : 0;
+		return this.keys.up.isDown ? -1 : this.keys.down.isDown ? 1 : 0;
 	}
 
 	get attack_axes(): Record<"x" | "y", 1 | 0 | -1> {

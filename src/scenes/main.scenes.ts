@@ -1,4 +1,6 @@
 import { DEFAULT_HEIGHT, DEFAULT_WIDTH, SCENES } from "@constants";
+import Entity, { EntityEventEmitter } from "@game/objects/entity/entity";
+import Player from "@game/objects/player";
 
 export class Main extends Phaser.Scene {
 	constructor() {
@@ -6,17 +8,6 @@ export class Main extends Phaser.Scene {
 	}
 
 	create() {
-		// this.add
-		// 	.text(
-		// 		DEFAULT_WIDTH / 2,
-		// 		DEFAULT_HEIGHT / 2,
-		// 		this.i18n.t("common.hello_world"),
-		// 		{
-		// 			color: "white",
-		// 			align: "center",
-		// 		},
-		// 	)
-		// 	.setOrigin(0.5);
 		const buttonContainer = this.add.container(
 			DEFAULT_WIDTH / 2 - 40,
 			DEFAULT_HEIGHT / 2 + 64,
@@ -45,6 +36,8 @@ export class Main extends Phaser.Scene {
 				},
 			})
 			.setOrigin(0.5);
+
+		const entity = new Player(this, 100, 200);
 	}
 }
 

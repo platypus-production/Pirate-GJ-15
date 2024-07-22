@@ -52,6 +52,8 @@ export class Preload extends Phaser.Scene {
 			);
 		});
 
+		this.createDummyTexture(0xff0000, "dummy-cube");
+
 		this.load.on("complete", () => this.scene.start(SCENES.MAIN));
 	}
 

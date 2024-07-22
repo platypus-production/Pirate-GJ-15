@@ -7,13 +7,17 @@ This is repository for **Pirate Software - Game Jam 15 at July 17h to 31th July*
 - [:globe_with_meridians: Project :video_game:](https://platypus-production.github.io/Pirate-GJ-15/)
 
 ## Summary
-- [Project]()
-- [Development Requirements](#development-requirement)
-- [Liscence](#liscence)
+- [\[DEFINED\_GAME\_NAME\] for PIRATE JAM](#defined_game_name-for-pirate-jam)
+  - [Summary](#summary)
+  - [Project](#project)
+  - [Development Requirement](#development-requirement)
+    - [Requirements](#requirements)
+    - [Installation and run project](#installation-and-run-project)
+  - [Liscence](#liscence)
 
 ## Project
 
-> [WIP] usefull link project description etc...
+This is the [PIRATE JAM](https://itch.io/jam/pirate) project directory, and you can find more information on the [GDD](./docs/Pirate%20Jam/Game%20Design%20Document.md).
 
 ## Development Requirement
 
