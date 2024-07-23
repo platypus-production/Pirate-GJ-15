@@ -52,13 +52,16 @@ export class Preload extends Phaser.Scene {
 			);
 		});
 
-		this.createDummyTexture(0xff0000, "dummy-cube");
+		this.createDummyTexture(0xff0000, "dummy-cube", 64, 32);
+		this.createDummyTexture(0xfff000, "dummy-item-a", 32, 32);
+		this.createDummyTexture(0xff00ff, "dummy-item-b", 32, 32);
+		this.createDummyTexture(0x00ff00, "dummy-item-c", 32, 32);
 
 		this.load.on("complete", () => this.scene.start(SCENES.MAIN));
 	}
 
-	createDummyTexture(color: number, name: string) {
-		const dummy_cube = this.add.renderTexture(0, 0, 64, 64);
+	createDummyTexture(color: number, name: string, width = 64, height?: number) {
+		const dummy_cube = this.add.renderTexture(0, 0, width, height || width);
 		const dummy_cube_graphic = this.add
 			.graphics()
 			.fillStyle(color)

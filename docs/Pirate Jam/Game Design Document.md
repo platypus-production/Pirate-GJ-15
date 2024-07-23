@@ -157,9 +157,9 @@ SPEC Loot system :done GDD8, 2024-07-22, 8h
 section Dev
 Add Internationalization with i18next :done DEV0, 2024-07-20-12, 8h
 Create the input management system :done after DEV0 DEV1, 2024-07-21, 8h
-Create class for entity & player :done, 2024-07-21-17, 8h 
-Create class for ennemy :,2024-07-22-17, 4h
-Create Weapon :, 2024-07-22-17, 4h
+Create class for entity & player :done, 2024-07-22-17, 8h 
+Create class for ennemy :,2024-07-24-17, 4h
+Create Weapon :, 2024-07-24-17, 4h
 Create inventory management :, 2024-07-23-17, 4h
 Create Basic crafting system :, 2024-07-23-17, 4h
 
