@@ -1,5 +1,4 @@
 import { DEFAULT_HEIGHT, DEFAULT_WIDTH, SCENES } from "@constants";
-import Entity, { EntityEventEmitter } from "@game/objects/entity/entity";
 import Player from "@game/objects/player";
 
 export class Main extends Phaser.Scene {
