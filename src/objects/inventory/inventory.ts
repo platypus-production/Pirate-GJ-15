@@ -1,3 +1,4 @@
+import type { ElementCount, ElementSymbol } from "@types";
 import type {
 	Item,
 	ItemInventory,
@@ -12,7 +13,7 @@ export class Inventory {
 
 	constructor() {
 		this.list = new Map<string, ItemInventory>();
-		InventoryEventEmitter.on("ON_DELETE_ITEM", this.delete);
+		InventoryEventEmitter.on("ON_DELETE_ITEM", this.delete, this);
 	}
 
 	add(item: Item) {
@@ -26,7 +27,7 @@ export class Inventory {
 			quantity: inventoryItem.quantity + 1,
 		});
 
-		InventoryEventEmitter.emit("ON_UPDATE_ITEM", inventoryItem);
+		InventoryEventEmitter.emit("ON_UPDATE_ITEM", inventoryItem, this);
 	}
 
 	remove(name: string) {
@@ -35,21 +36,22 @@ export class Inventory {
 		const item = this.list.get(name)!;
 		item.quantity--;
 
-		InventoryEventEmitter.emit("ON_UPDATE_ITEM", item);
+		InventoryEventEmitter.emit("ON_UPDATE_ITEM", item, this);
 
-		if (item.quantity < 1) InventoryEventEmitter.emit("ON_DELETE_ITEM", name);
+		if (item.quantity === 0)
+			InventoryEventEmitter.emit("ON_DELETE_ITEM", name, this);
 	}
 
 	delete(name: string) {
 		this.list.delete(name);
 	}
 
-	private addNew({ name, description, chemicalComposition }: Item) {
+	private addNew({ name, description, chemicalCompound }: Item) {
 		this.list.set(name, {
 			quantity: 1,
 			name,
 			description,
-			chemicalComposition,
+			chemicalCompound,
 		});
 
 		InventoryEventEmitter.emit("ON_ADD_ITEM", this.list.get(name));
@@ -57,6 +59,23 @@ export class Inventory {
 
 	getByKey(name: string) {
 		return this.list.get(name);
+	}
+
+	getAllChemicalCompoundInventory() {
+		return this.tuple.reduce<ElementCount>((acc, [, item]) => {
+			for (const [symbol, element] of Object.entries(item.chemicalCompound)) {
+				const elmtSymbol = symbol as ElementSymbol;
+				if (acc[elmtSymbol]) {
+					acc[elmtSymbol].total += element.subscript;
+				} else {
+					acc[elmtSymbol] = {
+						name: element.name,
+						total: element.subscript * item.quantity,
+					};
+				}
+			}
+			return acc;
+		}, {} as ElementCount);
 	}
 
 	get itemsName(): Array<string> {
@@ -67,3 +86,5 @@ export class Inventory {
 		return Array.from(this.list);
 	}
 }
+
+export default Inventory;
