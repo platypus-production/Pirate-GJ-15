@@ -52,3 +52,5 @@ export class InventoryGUI extends Phaser.GameObjects.Container {
 		this.updateUi();
 	}
 }
+
+export default InventoryGUI;
