@@ -21,3 +21,5 @@ export class InventoryItem extends Phaser.GameObjects.Container {
 		this.quantityText.setText(quantity.toString());
 	}
 }
+
+export default InventoryItem;

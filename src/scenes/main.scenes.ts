@@ -1,5 +1,5 @@
 import { DEFAULT_HEIGHT, DEFAULT_WIDTH, SCENES } from "@constants";
-import Player from "@game/objects/player";
+import { Player } from "@objects";
 
 export class Main extends Phaser.Scene {
 	constructor() {
