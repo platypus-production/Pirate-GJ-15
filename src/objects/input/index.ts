@@ -104,11 +104,19 @@ export class InputManager {
 	}
 
 	get axe_x(): 1 | 0 | -1 {
-		return this.keys.right.isDown ? 1 : this.keys.left.isDown ? -1 : 0;
+		return this.keys.attack_right.isDown
+			? 1
+			: this.keys.attack_left.isDown
+				? -1
+				: 0;
 	}
 
 	get axe_y(): 1 | 0 | -1 {
-		return this.keys.up.isDown ? -1 : this.keys.down.isDown ? 1 : 0;
+		return this.keys.attack_up.isDown
+			? -1
+			: this.keys.attack_down.isDown
+				? 1
+				: 0;
 	}
 
 	get attack_axes(): Record<"x" | "y", 1 | 0 | -1> {
