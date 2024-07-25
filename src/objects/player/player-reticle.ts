@@ -50,32 +50,32 @@ export class PlayerReticle extends Phaser.Physics.Matter.Sprite {
 	}
 
 	private constrain() {
-		const distX = this._target.x - this.x;
-		const distY = this._target.y - this.y;
+		const distX = this.x - this._target.x;
+		const distY = this.y - this._target.y;
 
 		if (distX > 800) {
-			this._target.x = this.x + 800;
+			this.x = this._target.x + 800;
 		} else if (distX < -800) {
-			this._target.x = this.x - 800;
+			this.x = this._target.x - 800;
 		}
 
 		if (distY > 600) {
-			this._target.y = this.y + 600;
+			this.y = this._target.y + 600;
 		} else if (distY < -600) {
-			this._target.y = this.y - 600;
+			this.y = this._target.y - 600;
 		}
 
 		const distBetween = Phaser.Math.Distance.Between(
-			this.x,
-			this.y,
 			this._target.x,
 			this._target.y,
+			this.x,
+			this.y,
 		);
 		if (distBetween > 275) {
 			const scale = distBetween / 275;
 
-			this._target.x = this.x + (this._target.x - this.x) / scale;
-			this._target.y = this.y + (this._target.y - this.y) / scale;
+			this.x = this._target.x + (this.x - this._target.x) / scale;
+			this.y = this._target.y + (this.y - this._target.y) / scale;
 		}
 	}
 }
