@@ -1,42 +1,27 @@
-import { DEFAULT_HEIGHT, DEFAULT_WIDTH, SCENES } from "@constants";
-import { Player } from "@objects";
+import { SCENES } from "@constants";
+import { Enemy, Player } from "@objects";
 
 export class Main extends Phaser.Scene {
+	player: Player;
+	enemy: Enemy;
 	constructor() {
-		super({ key: SCENES.MAIN });
+		super({
+			key: SCENES.MAIN,
+		});
 	}
 
 	create() {
-		const buttonContainer = this.add.container(
-			DEFAULT_WIDTH / 2 - 40,
-			DEFAULT_HEIGHT / 2 + 64,
-		);
-		for (const lang of this.i18n.supportedLngs) {
-			const text = this.add
-				.text(0 + buttonContainer.length * 32, 0, lang, {
-					color: "white",
-					align: "center",
-				})
-				.setOrigin(0.5)
-				.setInteractive()
-				.on("pointerdown", () => this.i18n.changeLanguage(lang));
-			buttonContainer.add(text);
-		}
+		this.player = new Player(this, 200, 200);
+		this.enemy = new Enemy(this, 500, 500);
 
-		const text = this.add
-			.i18Text({
-				x: DEFAULT_WIDTH / 2,
-				y: DEFAULT_HEIGHT / 2,
-				text: "common.hello",
-				interpolation: { name: "John Doe" },
-				style: {
-					color: "white",
-					align: "center",
-				},
-			})
-			.setOrigin(0.5);
+		this.enemy.setTarget(this.player);
 
-		const entity = new Player(this, 100, 200);
+		this.cameras.main.setZoom(1).startFollow(this.player);
+	}
+
+	update(time: number, delta: number): void {
+		this.player.update(time, delta);
+		this.enemy.update(time, delta);
 	}
 }
 
