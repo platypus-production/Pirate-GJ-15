@@ -10,28 +10,36 @@ type EntityProps = {
 };
 
 export const EntityEventEmitter = new Phaser.Events.EventEmitter();
-export class Entity extends Phaser.GameObjects.Sprite {
-	declare body: Phaser.Physics.Arcade.Body;
+
+export class Entity extends Phaser.Physics.Matter.Sprite {
+	declare body: MatterJS.BodyType;
 	private stats: NonNullable<EntityProps["stats"]>;
 
-	constructor({ scene, x, y, texture, frame, stats }: EntityProps) {
-		super(scene, x, y, texture, frame);
-
+	constructor(
+		world: Phaser.Physics.Matter.World,
+		x: number,
+		y: number,
+		texture: string | Phaser.Textures.Texture,
+		frame?: string | number,
+		stats?: { speed: number },
+	) {
+		super(world, x, y, texture, frame, {});
 		this.stats = {
-			speed: 600,
 			...stats,
+			speed: 10,
 		};
-
-		this.scene.add.existing(this);
-		this.scene.physics.add.existing(this);
-
-		this.body.setBounce(0.2).setMaxVelocity(this.stats.speed);
 		EntityEventEmitter.on("ON_DEATH", this.onDeath, this);
 	}
 
 	onMove(axes: Record<"x" | "y", -1 | 0 | 1>) {
-		this.body.setVelocity(axes.x * this.stats.speed, axes.y * this.stats.speed);
-		this.body.velocity.normalize().scale(this.stats.speed);
+		const normalize = new Phaser.Math.Vector2(
+			axes.x * this.stats.speed,
+			axes.y * this.stats.speed,
+		)
+			.normalize()
+			.scale(this.stats.speed);
+
+		this.setVelocity(normalize.x, normalize.y);
 	}
 
 	onDeath(callback?: FunctionWithUnknowArgs) {

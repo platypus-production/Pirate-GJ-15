@@ -24,6 +24,10 @@ export const config: Phaser.Types.Core.GameConfig = {
 		default: DEFAULT_PHYSICS,
 		[DEFAULT_PHYSICS]: {
 			debug: process.env.NODE_ENV === "development",
+			gravity: {
+				x: 0,
+				y: 0,
+			},
 		},
 	},
 };

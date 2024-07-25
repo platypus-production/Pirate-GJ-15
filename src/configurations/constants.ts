@@ -1,4 +1,4 @@
-export const DEFAULT_PHYSICS: "matter" | "arcade" = "arcade";
+export const DEFAULT_PHYSICS: "matter" | "arcade" = "matter";
 export const DEFAULT_WIDTH = 1280;
 export const DEFAULT_HEIGHT = 720;
 
