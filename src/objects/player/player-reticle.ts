@@ -1,6 +1,8 @@
-import type Entity from "../entity";
-
+import type { Entity } from "../base";
+//@TODO: extends to EntityWithTarget
 export class PlayerReticle extends Phaser.Physics.Matter.Sprite {
+	declare body: MatterJS.BodyType;
+
 	private _target: Entity;
 	private _pointer: Phaser.Input.Pointer;
 
