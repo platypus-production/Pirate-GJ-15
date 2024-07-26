@@ -158,16 +158,16 @@ section Dev
 Add Internationalization with i18next :done DEV0, 2024-07-20-12, 8h
 Create the input management system :done after DEV0 DEV1, 2024-07-21, 8h
 Create class for entity & player :done, 2024-07-22-17, 8h 
-Create class for ennemy :,2024-07-24-17, 4h
-Create Weapon :, 2024-07-24-17, 4h
+Create class for ennemy & Change Physics system :sone,2024-07-25-17, 4h
+Create Weapon :, 2024-07-26-17, 4h
 Create inventory management :done, 2024-07-23-17, 4h
 Create Basic crafting system :done, 2024-07-23-17, 4h
 
 section Level Design
-Create a playground level :, 2024-07-25, 4h
+Create a playground level :, 2024-07-27, 4h
 
 section Arts & Design
-Create wireframe of tilemaps :, 2024-07-25, 4h
+Create wireframe of tilemaps :, 2024-07-27, 4h
 
 section UX/UI
 
