@@ -54,10 +54,9 @@ export class Preload extends Phaser.Scene {
 
 		this.createDummyTexture(0xff0000, "dummy-cube", 64, 32);
 		this.createDummyTexture(0xff00ff, "dummy-enemy-cube", 64, 32);
-		this.createDummyTexture(0xfff000, "dummy-item-a", 32, 32);
-		this.createDummyTexture(0xff00ff, "dummy-item-b", 32, 32);
-		this.createDummyTexture(0x00ff00, "dummy-item-c", 32, 32);
 		this.createDummyTexture(0x00ff00, "reticle", 8, 8);
+		this.createDummyTexture(0x00ff00, "weapon-ranged", 8, 12);
+		this.createDummyTexture(0x00ff00, "weapon-close-up", 64, 8);
 
 		this.load.on("complete", () => this.scene.start(SCENES.MAIN));
 	}
