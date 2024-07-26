@@ -13,3 +13,11 @@ export enum OVERLAY {
 	HUD = "hud-overlay",
 	MAP = "map-overlay",
 }
+
+export enum COLLISION {
+	NONE = 0,
+	PLAYER = 1,
+	ENEMY = 2,
+	ENEMY_PROJECTILE = 3,
+	PLAYER_PROJECTILE = 4,
+}
