@@ -23,9 +23,6 @@ export class Player extends Entity {
 
 		this.reticle = new PlayerReticle(scene, x, y + 50);
 		this.reticle.attach(this);
-
-		this.weapon = new WeaponCloseUp(scene, x, y);
-		this.weapon.attachToTarget(this);
 	}
 
 	update(_time: number, _delta: number): void {

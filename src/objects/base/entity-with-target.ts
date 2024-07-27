@@ -61,25 +61,15 @@ export class EntityWithTarget<T extends Entity> extends Phaser.Physics.Matter
 		};
 	}
 
-	setBodyOrigin(originX: number, originY: number): this {
-		if (this.body) {
-			// Calculer le décalage par rapport à l'origine actuelle
-			const offsetX = (originX - this.originX) * this.width;
-			const offsetY = (originY - this.originY) * this.height;
-
-			// Mettre à jour la position du body
-			this.scene.matter.body.setPosition(
-				this.body as MatterJS.BodyType,
-				{
-					x: this.body.position.x + offsetX,
-					y: this.body.position.y + offsetY,
-				},
-				true,
-			);
-
-			// Mettre à jour l'origine du sprite
-			this.setOrigin(originX, originY);
-		}
+	setBodyOrigin(x: number, y?: number): this {
+		this.scene.matter.body.setCentre(
+			this.body,
+			{
+				x: x,
+				y: y || x,
+			},
+			true,
+		);
 		return this;
 	}
 }

@@ -14,9 +14,10 @@ export class Weapon extends EntityWithTarget<Entity> {
 		x: number,
 		y: number,
 		texture: string,
+		bodyConfig?: Phaser.Types.Physics.Matter.MatterBodyConfig,
 		fireCooldown = 200,
 	) {
-		super({ world: scene.matter.world, x, y, texture });
+		super({ world: scene.matter.world, x, y, texture, bodyConfig });
 		this.offsetDistance = 30;
 		this.offsetAngle = Math.PI / 2;
 		this.cooldowns = new Map<string, Cooldown>();
