@@ -1,13 +1,18 @@
-import { Cooldown } from "@game/utils";
-import { type Entity, EntityWithTarget } from "../base";
+import { COLLISION } from "@constants";
+import { Cooldown, isEnemy, isPlayer } from "@utils";
+import { type Entity, EntityFollower } from "../base";
+import type { Enemy } from "../enemy";
+import type { Player } from "../player";
 
 export const WeaponEventEmitter = new Phaser.Events.EventEmitter();
 
 // @TODO: Create cache File for weapon statistique
-export class Weapon extends EntityWithTarget<Entity> {
+export class Weapon extends EntityFollower<Entity> {
 	private offsetDistance: number;
 	private offsetAngle: number;
 	private cooldowns: Map<string, Cooldown>;
+
+	public targetCategory: COLLISION;
 
 	constructor(
 		scene: Phaser.Scene,
@@ -18,11 +23,15 @@ export class Weapon extends EntityWithTarget<Entity> {
 		fireCooldown = 200,
 	) {
 		super({ world: scene.matter.world, x, y, texture, bodyConfig });
+
 		this.offsetDistance = 30;
 		this.offsetAngle = Math.PI / 2;
+
 		this.cooldowns = new Map<string, Cooldown>();
 
 		this.cooldowns.set("fire", new Cooldown(scene, fireCooldown));
+
+		this.on("ON_ATTACH", this.defineTargetCategory, this);
 
 		scene.input.on("pointerdown", this.onFire, this);
 	}
@@ -41,8 +50,21 @@ export class Weapon extends EntityWithTarget<Entity> {
 		this.setRotation(this.targetRotation);
 	}
 
-	onFire() {
+	private onFire() {
 		this.startCooldown("fire", () => WeaponEventEmitter.emit("ON_FIRE"));
+	}
+
+	private defineTargetCategory(entity: Player | Enemy | Entity) {
+		if (isEnemy(entity)) {
+			this.targetCategory = COLLISION.PLAYER;
+			return;
+		}
+		if (isPlayer(entity)) {
+			this.targetCategory = COLLISION.PLAYER;
+			return;
+		}
+
+		this.targetCategory = COLLISION.NONE;
 	}
 
 	addCooldown(key: string, duration: number) {

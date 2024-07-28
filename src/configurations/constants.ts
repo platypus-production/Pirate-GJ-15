@@ -15,9 +15,8 @@ export enum OVERLAY {
 }
 
 export enum COLLISION {
-	NONE = 0,
-	PLAYER = 1,
-	ENEMY = 2,
-	ENEMY_PROJECTILE = 3,
-	PLAYER_PROJECTILE = 4,
+	NONE = 0x000,
+	BULLET = 0x001,
+	PLAYER = 0x002,
+	ENEMY = 0x003,
 }

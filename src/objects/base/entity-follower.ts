@@ -1,18 +1,17 @@
-import { Physics } from "phaser";
 import type Entity from "./entity";
-type EntityWithTargetProps<T> = {
+import { SpriteMatter } from "./sprite-matter";
+
+type EntityFollowerProps<T> = {
 	world: Phaser.Physics.Matter.World;
 	x: number;
 	y: number;
-	texture: string;
+	texture: string | Phaser.Textures.Texture;
 	frame?: string | number;
 	target?: T;
 	bodyConfig?: Phaser.Types.Physics.Matter.MatterBodyConfig;
 };
-export class EntityWithTarget<T extends Entity> extends Phaser.Physics.Matter
-	.Sprite {
-	declare body: MatterJS.BodyType;
 
+export class EntityFollower<T extends Entity> extends SpriteMatter {
 	private _target?: T;
 	private isFollowing = false;
 
@@ -24,7 +23,7 @@ export class EntityWithTarget<T extends Entity> extends Phaser.Physics.Matter
 		frame,
 		bodyConfig,
 		target,
-	}: EntityWithTargetProps<T>) {
+	}: EntityFollowerProps<T>) {
 		super(world, x, y, texture, frame, bodyConfig);
 		this._target = target;
 	}
@@ -40,10 +39,12 @@ export class EntityWithTarget<T extends Entity> extends Phaser.Physics.Matter
 
 	attachToTarget<K extends T>(entity: K) {
 		this._target = entity;
+		this.emit("ON_ATTACH", entity);
 	}
 
 	detachToTarget() {
 		this._target = undefined;
+		this.emit("ON_ATTACH");
 	}
 
 	toggleFollowTarget() {
@@ -61,15 +62,10 @@ export class EntityWithTarget<T extends Entity> extends Phaser.Physics.Matter
 		};
 	}
 
-	setBodyOrigin(x: number, y?: number): this {
-		this.scene.matter.body.setCentre(
-			this.body,
-			{
-				x: x,
-				y: y || x,
-			},
-			true,
-		);
-		return this;
+	get targetSize() {
+		return {
+			width: this._target?.width || 0,
+			height: this._target?.height || 0,
+		};
 	}
 }

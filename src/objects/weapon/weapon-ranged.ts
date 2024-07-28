@@ -16,6 +16,9 @@ export class WeaponRanged extends Weapon {
 			key: "bullet",
 			classType: Bullet,
 			runChildUpdate: true,
+			createCallback: (entity) => {
+				(entity as Bullet).setCollistionFilter(this.targetCategory);
+			},
 		});
 
 		WeaponEventEmitter.on("ON_FIRE", this.handleFire, this);

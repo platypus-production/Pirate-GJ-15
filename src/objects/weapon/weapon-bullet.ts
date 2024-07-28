@@ -1,9 +1,8 @@
-import { COLLISION } from "@game/configurations/constants";
-import { toEntity } from "@game/utils";
+import { COLLISION } from "@constants";
+import { toEntity } from "@utils";
+import { SpriteMatter } from "../base/sprite-matter";
 
-export class Bullet extends Phaser.Physics.Matter.Sprite {
-	declare body: MatterJS.BodyType;
-
+export class Bullet extends SpriteMatter {
 	private readonly maxTTL = 1000;
 
 	private ttl = 0;
@@ -21,11 +20,6 @@ export class Bullet extends Phaser.Physics.Matter.Sprite {
 		super(scene.matter.world, x, y, texture, frame, {
 			label: "bullet",
 			isSensor: true,
-			// NEED TO BE DEFINE DYNAMICALLY
-			collisionFilter: {
-				category: COLLISION.PLAYER_PROJECTILE,
-				mask: COLLISION.ENEMY,
-			},
 		});
 
 		this.setOnCollide(this.onCollide.bind(this));
@@ -51,17 +45,22 @@ export class Bullet extends Phaser.Physics.Matter.Sprite {
 		this.rotation = from.rotation;
 	}
 
-	onCollide({
-		bodyA,
-		bodyB,
-	}: { bodyA: MatterJS.BodyType; bodyB: MatterJS.BodyType }) {
+	onCollide({ bodyA, bodyB }: Record<"bodyA" | "bodyB", MatterJS.BodyType>) {
 		if (
-			bodyA.collisionFilter.category === COLLISION.ENEMY &&
-			bodyB.collisionFilter.category === COLLISION.PLAYER_PROJECTILE
+			bodyA.collisionFilter.category === this.body.collisionFilter.mask &&
+			bodyB.collisionFilter.category === this.body.collisionFilter.category
 		) {
 			const entity = toEntity(bodyA.gameObject);
 			entity.onDeath();
 			this.destroy();
 		}
+	}
+
+	setCollistionFilter(payload: COLLISION) {
+		this.body.collisionFilter = {
+			...this.body.collisionFilter,
+			category: payload,
+			mask: payload === COLLISION.ENEMY ? COLLISION.PLAYER : COLLISION.ENEMY,
+		};
 	}
 }

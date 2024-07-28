@@ -1,8 +1,7 @@
-import { COLLISION } from "@game/configurations/constants";
+import { COLLISION } from "@constants";
 import { Entity } from "../base";
 import { InputManager } from "../input";
-import type { Weapon } from "../weapon";
-import { WeaponCloseUp } from "../weapon/weapon-close-up";
+import { type Weapon, WeaponRanged } from "../weapon";
 import PlayerReticle from "./player-reticle";
 
 export class Player extends Entity {
@@ -15,14 +14,17 @@ export class Player extends Entity {
 			label: "player",
 			collisionFilter: {
 				group: COLLISION.PLAYER,
-				mask: COLLISION.ENEMY | COLLISION.ENEMY_PROJECTILE,
+				mask: COLLISION.ENEMY | COLLISION.BULLET,
 			},
 		});
 
 		this.inputManager = new InputManager(scene);
 
 		this.reticle = new PlayerReticle(scene, x, y + 50);
-		this.reticle.attach(this);
+		this.reticle.attachToTarget(this);
+
+		this.weapon = new WeaponRanged(scene, x, y, this.reticle);
+		this.weapon.attachToTarget(this);
 	}
 
 	update(_time: number, _delta: number): void {

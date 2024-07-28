@@ -1,4 +1,5 @@
 import type { FunctionWithUnknowArgs } from "@types";
+import { SpriteMatter } from "./sprite-matter";
 
 type EntityProps = {
 	scene: Phaser.Scene;
@@ -9,10 +10,11 @@ type EntityProps = {
 	stats?: { speed: number };
 };
 
-export class Entity extends Phaser.Physics.Matter.Sprite {
-	declare body: MatterJS.BodyType;
+export class Entity extends SpriteMatter {
 	private stats: NonNullable<EntityProps["stats"]>;
-	private alive = true;
+
+	private _isAlive = true;
+
 	constructor(
 		world: Phaser.Physics.Matter.World,
 		x: number,
@@ -41,7 +43,7 @@ export class Entity extends Phaser.Physics.Matter.Sprite {
 	}
 
 	onDeath(callback?: FunctionWithUnknowArgs) {
-		if (this.alive) this.alive = false;
+		if (this.isAlive) this._isAlive = false;
 		if (callback) {
 			callback();
 		}
@@ -49,7 +51,7 @@ export class Entity extends Phaser.Physics.Matter.Sprite {
 	}
 
 	get isAlive() {
-		return this.alive;
+		return this._isAlive;
 	}
 }
 

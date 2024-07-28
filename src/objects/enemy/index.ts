@@ -1,4 +1,4 @@
-import { COLLISION } from "@game/configurations/constants";
+import { COLLISION } from "@constants";
 import { Entity } from "../base";
 
 export class Enemy extends Entity {
@@ -10,7 +10,7 @@ export class Enemy extends Entity {
 			label: "enemy",
 			collisionFilter: {
 				category: COLLISION.ENEMY,
-				mask: COLLISION.PLAYER | COLLISION.PLAYER_PROJECTILE,
+				mask: COLLISION.PLAYER | COLLISION.BULLET,
 			},
 		});
 	}
