@@ -84,9 +84,12 @@ export class Weapon extends EntityFollower<Entity> {
 
 	/**
 	 * Handles the firing action of the weapon.
+	 * @param pointer - The Phaser pointer.
 	 */
-	private onFire(): void {
-		this.startCooldown("fire", () => WeaponEventEmitter.emit("ON_FIRE"));
+	private onFire(pointer: Phaser.Input.Pointer): void {
+		if (pointer.leftButtonDown()) {
+			this.startCooldown("fire", () => WeaponEventEmitter.emit("ON_FIRE"));
+		}
 	}
 
 	/**
