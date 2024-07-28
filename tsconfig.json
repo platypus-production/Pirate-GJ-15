@@ -25,7 +25,6 @@
 		/* Path */
 		"paths": {
 			"@assets/*": ["assets/*"],
-			"@game/*": ["src/*"],
 			"@config": ["src/configurations/config.ts"],
 			"@constants": ["src/configurations/constants.ts"],
 			"@scenes": ["src/scenes/index.ts"],

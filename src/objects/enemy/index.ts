@@ -1,14 +1,22 @@
-import { Entity } from "../entity";
+import { COLLISION } from "@constants";
+import { Entity } from "../base";
 
 export class Enemy extends Entity {
 	private _target: Entity;
 	private readonly CHASE_DISTANCE = 300;
 
 	constructor(scene: Phaser.Scene, x: number, y: number) {
-		super(scene.matter.world, x, y, "dummy-enemy-cube");
+		super(scene.matter.world, x, y, "dummy-enemy-cube", 0, {
+			label: "enemy",
+			collisionFilter: {
+				category: COLLISION.ENEMY,
+				mask: COLLISION.PLAYER | COLLISION.BULLET,
+			},
+		});
 	}
 
 	update(_time: number, _delta: number) {
+		if (!this.isAlive) return;
 		if (this.shouldChase()) {
 			this.startFollowTarget();
 		} else {
